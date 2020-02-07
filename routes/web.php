@@ -26,7 +26,8 @@ Route::prefix('test/transmit')->group(function(){//前台登录页
 });
 //test  验证签名
 Route::prefix('tesr/card')->group(function(){//前台登录页
-    Route::any('check','port\CardController@check');//后台列表页
+    Route::any('check','port\CardController@check');
+    Route::any('checktwo','port\CardController@checktwo');
   
 });
 

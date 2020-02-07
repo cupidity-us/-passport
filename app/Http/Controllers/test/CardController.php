@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class CardController extends Controller
 {
-    public function md5()
+    public function check()
     {
        
         $key = "123654";          
@@ -29,5 +29,26 @@ class CardController extends Controller
 
 
     }
+
+    public function checktwo()
+    {   
+
+        $key = "123654";     
+        //接收数据 和 签名
+        $json_data = $_POST['data'];
+        $sign = $_POST['sign'];
+
+        //计算签名
+        $sign2 = md5($json_data.$key);
+       
+        // 比较接收到的签名
+        if($sign2==$sign){
+            echo "验签成功";
+        }else{
+            echo "验签失败";
+        }
+    }
+
+
 }
 
