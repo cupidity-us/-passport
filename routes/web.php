@@ -25,9 +25,14 @@ Route::prefix('test/transmit')->group(function(){//前台登录页
     Route::any('getinfo','test\TransmitController@getinfo');//后台列表页
 });
 //test  验证签名
-Route::prefix('tesr/card')->group(function(){//前台登录页
-    Route::any('check','port\CardController@check');
-    Route::any('checktwo','port\CardController@checktwo');
+Route::prefix('test/card')->group(function(){//前台登录页
+    Route::any('check','test\CardController@check');
+    Route::any('checktwo','test\CardController@checktwo');
+  
+});
+//公钥私钥验证签名
+Route::prefix('test/openssl')->group(function(){
+    Route::any('decrypt','test\OpensslController@decrypt');
   
 });
 
